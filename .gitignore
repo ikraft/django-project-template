@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+*.log
+*.pot
+*.sqlite3
+*.db
+*.egg-info
+{{ project_name }}/settings/local.py
+{{ project_name }}/settings/local/*
+docs/_build
+

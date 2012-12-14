@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+*.log
+*.pot
+*.sqlite3
+*.db
+etc/django/local.py
+docs/requirements/local.txt
+
