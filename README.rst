@@ -1,4 +1,5 @@
 .. {% comment %}
+
 ========================
 Django Project Template
 ========================
@@ -63,6 +64,7 @@ Inline comments should be self explainatory. ::
 .. _iKraft: http://ikraftsoft.com
 
 -----
+
 .. note:: The following text will become the README.rst of the new project. Everything above this will not be included in README.rst
 
 .. {% endcomment %}
@@ -73,7 +75,6 @@ Inline comments should be self explainatory. ::
 
 Getting Started
 ---------------
-
 To bootstrap the project on a Ubuntu machine with PostgreSQL::
 
     $ sudo apt-get install build-essential python2.7-dev postgresql postgresql-server-dev-all 
