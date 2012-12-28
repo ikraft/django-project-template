@@ -13,7 +13,9 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 here = lambda * x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+# Calculate the project root
 PROJECT_ROOT = here('..', '..')
+# A handy function 'root' for easily calculating paths accross settings.
 root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
 
 ADMINS = (

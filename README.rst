@@ -56,10 +56,10 @@ Inline comments should be self explainatory. ::
     |   |   |-- local-sample.py
     |   |   |-- production.py
     |   |   `-- staging.py
-    `-- public --------------------(STATIC_ROOT)
-        `-- uploads ---------------(MEDIA_ROOT)
-    
-    
+    |-- public --------------------(STATIC_ROOT)
+    |   `-- uploads -- uploads ---------------(MEDIA_ROOT)
+    `-- templates
+        `-- base.html
 
 .. _iKraft: http://ikraftsoft.com
 
