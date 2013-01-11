@@ -12,7 +12,7 @@ Usage
 =====
 Use following command to use it in your own project::
 
-    $ django-admin.py startproject testproject --template=https://github.com/ikraft/django-project-template/zipball/master 
+    $ django-admin.py startproject testproject --template=https://github.com/ikraft/django-project-template/zipball/master
 
 Directory Layout
 ================
@@ -63,6 +63,75 @@ Inline comments should be self explainatory. ::
 
 .. _iKraft: http://ikraftsoft.com
 
+
+Compass/SASS
+============
+
+Althought not required, we generate all stylesheets using a Compass/SASS.
+
+Installing and using Compass
+----------------------------
+
+On an Ubuntu 12.04 machine, `compass` can be installed with following commands:
+
+    sudo apt-get install ruby1.9.1-full
+    sudo gem update --system
+    sudo gem install compass
+
+Once installed, just
+
+    cd /path/to/project/assets
+    compass watch
+
+That's it!
+
+Check out compass website http://compass-style.org for detailed documentation.
+
+A note about runtime compilation
+--------------------------------
+
+We do not use runtime compilation for e.g, via django-compressorm to compile sass files. We simply use `compass watch` command. We found this method much simpler and easy to manage/maintain.
+
+
+Using frontend frameworks
+-------------------------
+
+Twitter Bootstrap
+~~~~~~~~~~~~~~~~~
+
+**Step 1: Install bootstrap-sass gem**
+
+There are many SASS/Compass ports of Bootstrap but we prefer https://github.com/thomas-mcdonald/bootstrap-sass.
+
+    sudo gem install bootstrap-sass
+
+**Step 2: Add bootstrap to compass config**
+
+Add following line to the top of `/path/to/project/assets/config.rb`
+
+    require 'bootstrap'
+
+**Step 3: Install bootstrap in the project**
+
+    cd /path/to/project/assets
+    compass install bootstrap
+
+**Step 4: Add bootstrap to your styles***
+
+Add following line at the to of your SASS/SCSS files:
+
+    @import bootstrap
+
+For responsive designs add following line, which won't be needed when Bootstrap v3 is released.
+
+    @import bootstrap-responsive
+
+Zurb Foundation
+~~~~~~~~~~~~~~~
+
+Same as Twitter Bootstrap; just replace the name of the gem and requires to `zurb-foundation`. See http://foundation.zurb.com/docs/compass.php for more details.
+
+
 -----
 
 .. note:: The following text will become the README.rst of the new project. Everything above this will not be included in README.rst
@@ -77,10 +146,10 @@ Getting Started
 ---------------
 To bootstrap the project on a Ubuntu machine with PostgreSQL::
 
-    $ sudo apt-get install build-essential python2.7-dev postgresql postgresql-server-dev-all 
+    $ sudo apt-get install build-essential python2.7-dev postgresql postgresql-server-dev-all
     $ mkvirtualenv {{ project_name }}
     $ workon {{ project_name }}
     $ cd path/to/{{ project_name }}
     $ pip install -r requirements/dev.txt
     $ cp {{ project_name }}/settings/local-example.py {{ project_name }}/settings/local.py
-    $ ./manage.py syncdb --migrate 
+    $ ./manage.py syncdb --migrate

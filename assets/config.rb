@@ -1,6 +1,6 @@
 # Require any additional compass plugins here. Like:
-# require 'zurb-foundation'
-#
+# require 'bootstrap'
+
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "css"
